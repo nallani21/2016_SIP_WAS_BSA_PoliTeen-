@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PoliTeen!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+
+  <script src="../lib/raphael.js"></script>
+  <!-- <script src="scale.raphael.js"></script> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+  <script src="color.jquery.js"></script>
+  <script src="../jquery.usmap.js"></script>
+
+  <link rel="stylesheet" href="politeens.css">
+  <script>
+
+ 
+  $(document).ready(function() {
+    $('#map').usmap({
+      stateSpecificStyles: {
+        'AL': {'fill': '#FF331F'}, 
+        'AK': {'fill': '#E21212'}, 
+        'AZ': {'fill': '#E21212'}, 
+        'AR': {'fill': '#E21212'},
+        'CA': {'fill': '#010067'},
+        'CO': {'fill': '#010067'},
+        'CT': {'fill': '#010067'},
+        'DE': {'fill': '#010067'},
+        'FL': {'fill': '#010067'},
+        'GA': {'fill': '#E21212'},
+        'HI': {'fill': '#010067'},
+        'ID': {'fill': '#E21212'},
+        'IL': {'fill': '#010067'},
+        'IN': {'fill': '#E21212'},
+        'IA': {'fill': '#010067'},
+        'KS': {'fill': '#E21212'},
+        'KY': {'fill': '#E21212'},
+        'LA': {'fill': '#E21212'},
+        'ME': {'fill': '#010067'},
+        'MD': {'fill': '#010067'},
+        'MA': {'fill': '#010067'},
+        'MI': {'fill': '#010067'},
+        'MN': {'fill': '#010067'},
+        'MS': {'fill': '#E21212'},
+        'MO': {'fill': '#E21212'},
+        'MT': {'fill': '#E21212'},
+        'NE': {'fill': '#E21212'},
+        'NV': {'fill': '#010067'},
+        'NH': {'fill': '#010067'},
+        'NJ': {'fill': '#010067'},
+        'NM': {'fill': '#010067'},
+        'NY': {'fill': '#010067'},
+        'NC': {'fill': '#E21212'},
+        'ND': {'fill': '#E21212'},
+        'OH': {'fill': '#010067'},
+        'OK': {'fill': '#E21212'},
+        'OR': {'fill': '#010067'},
+        'PA': {'fill': '#010067'},
+        'RI': {'fill': '#010067'},
+        'SC': {'fill': '#E21212'},
+        'SD': {'fill': '#E21212'},
+        'TN': {'fill': '#E21212'},
+        'TX': {'fill': '#E21212'},
+        'UT': {'fill': '#E21212'},
+        'VT': {'fill': '#010067'},
+        'VA': {'fill': '#010067'},
+        'WA': {'fill': '#010067'},
+        'WV': {'fill': '#E21212'},
+        'WI': {'fill': '#010067'},
+        'WY': {'fill': '#E21212'}
+      }
+    });
+
+     $('#map').on('usmapclick', function(event, data) {
+        if (data.name == "AL"){
+        $('#clicked-state')
+        .text('The Senetors for the state of '+data.name+' are Jeff Sessions and Richard C. Shelby')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "AK"){
+        $('#clicked-state')
+        .text('The Senetors for the state of '+data.name+' are Lisa Murkowski and Daniel Sullivan')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "AZ"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Jeff Flake and John McCain')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "AR"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are John Boozman and Tom Cotton')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "CA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Barbra Boxer and Dianne Feinstein')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "CO"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Michael F. Bennet and Cory Gardner')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "CT"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Richard Bluementhal and Christopher Murphy')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "DE"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Thomas R. Carper and Christopher Coons')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "FL"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Bill Nelson and Marco Rubio')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "GA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Johnny Isakson and David Perdue')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "HI"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Mazie K. Hirono and Brian Schatz')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "ID"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Mike Crapo and James E. Risch')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "IL"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Richard J. Durbin and Mark Kirk')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "IN"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Daniel Coats and Joe Donnelly')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "IA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Joni Ernst and Chuck Grassley')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "KS"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Jerry Moran and Pat Roberts')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "KY"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Mitch McConell and Paul Rand')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "LA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Bill Cassidy and David Vitter')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "ME"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Susan M. Collins and Angus S. King Jr.')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MD"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Benjamin L. Cardin and Barbara A. Mikulski')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Edward J. Markey and Elizabeth Warren')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MI"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Gary C. Peters and Debbie Stabenow')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MN"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Al Franken and Amy Klobuchar')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MS"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Thad Cochran and Roger F. Wicker')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MO"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "MT"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Steve Daines and Jon Tester')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NE"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Deb Fischer and Ben Sasse') 
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NV"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Dean Heller and Harry Reid')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NH"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Kelly Ayotte and Jeanne Shaheen')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NJ"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NM"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Martin Heinrich and Tom Udall')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NY"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Kirsten E. Gillibrand and Charles E. Schumer')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "NC"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Richard Burr and Thom Thillis')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "ND"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Heidi Heitkamp and John Hoeven')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "OH"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Sherrod Brown and Rob Portman')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "OK"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are James M. Inhofe and James Lankford')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "OR"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Jeff Merkley and Ron Wyden')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "PA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Robert P. Casey Jr. and Patrick J. Toomey')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "RI"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Jack Reed and Sheldon Whitehouse')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "SC"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Lindsey Graham and Tim Scott')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "SD"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Mike Rounds and John Thune')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "TN"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Lamar Alexander and Bob Corker')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "TX"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are John Cornyn and Ted Cruz')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "UT"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Orrin G. Hatch and Mike Lee')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "VT"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Patrick J. Leahy and Bernard Sanders')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "VA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Tim Kaine and Mark R. Warner')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "WA"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are Maria Cantwell and Patty Murray')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+        else if (data.name == "WY"){
+        $('#clicked-state')
+        .text('Your senetors for the state of '+data.name+' are John Barrasso and Michael B. Enzi')
+        .parent().effect('highlight', {color: '#C7F464'}, 2000);
+        }
+
+    });
+
+
+
+  });
+
+
+</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     	<a href="homepage.html">
+			<img border="0" alt="Logo" src="PoliTeensLogoCropped.png" width="157.389" height="50">
+		</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="politeensforum.html">Forum</a></li>
+      <li><a href="proposepolicy.html">Propose Policy</a></li>
+      <li class="active"><a href="contactCongressman.html">Contact Your Representative!</a></li>
+      <li><a href="UsrnmePswrdwclasses.html">Login</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+  <div class="container">
+	<h1>Contact Your Representative!</h1>
+	<p>Get involved by contacting your public official. You can find your congressperson <a href="http://www.house.gov/representatives/find/">here</a>. By clicking the previous link you will find your congressperson's contact information including email, phone number, and social media.</p>
+
+  <div align="center">
+	<div id="clicked-state">Click Alerts</div>
+  
+  <div id="map" style="width: 930px; height:630px; border: solid 3px red;"></div>
+  </div>
+  </div>
+
+
+</body>
+
+</html>
