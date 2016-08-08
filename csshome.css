@@ -1,150 +1,78 @@
-/*  body {
-      color: #0200AD;
-      height: 100%;
-      width: 100%;
-      min-height: 100%;
-    }
+/*#header {
+   color: #010067;
+}*/
 
-    .navbar-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      margin-top: 20px;
-    }
+/*.navWrap {
    
-    .navbar .nav > li > a {
-      padding: 15px 20px;
-    }
+}*/
 
-    .navbar .btn-navbar {
-      margin-top: 10px;
-    }
-
-    .carousel {
-      margin-bottom: 0px;
-    }
-
-    .carousel .container {
-      position: relative;
-      z-index: 9;
-    }
-
-    .carousel .item {
-      height: 100%;
-    }
-
-    .carousel-inner {
-      overflow:hidden;
-      width: 100%;
-      min-height: 100%;
-      position:relative;
-    }
-
-    .carousel img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-    }
-
-    /* RESPONSIVE CSS
-    --------------------------------------------------
-
-    @media (max-width: 979px) {
-
-      .container.navbar-wrapper {
-        margin-bottom: 0;
-        width: auto;
-      }
-      .navbar-inner {
-        border-radius: 0;
-        margin: -20px 0;
-      }
-
-      .carousel img {
-        width: auto;
-        height: 500px;
-      }
-
-      .featurette {
-        height: auto;
-        padding: 0;
-      }
-      .featurette-image.pull-left,
-      .featurette-image.pull-right {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
-      }
-    }
-
-
-    @media (max-width: 767px) {
-
-      .navbar-inner {
-        margin: -20px;
-      }
-
-      .carousel {
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-      .carousel img {
-        height: 300px;
-      }
-      .carousel-caption {
-        width: 65%;
-        padding: 0 70px;
-        margin-top: 100px;
-      }
-      .carousel-caption h1 {
-        font-size: 30px;
-      }
-      .carousel-caption .lead,
-      .carousel-caption .btn {
-        font-size: 18px;
-      }
-
-      .marketing .span4 + .span4 {
-        margin-top: 40px;
-      }
-
-      .featurette-heading {
-        font-size: 30px;
-      }
-      .featurette .lead {
-        font-size: 18px;
-        line-height: 1.5;
-      }
-
-    }
-*/
-
-.carocontainer{
-max-height: 400px;
-overflow: hidden;
+.nav {
+   width: 100%;
+  padding: 0px;
+  margin: 0px;
+  align: left;
+  z-index: 10;
+  position: absolute;
+  font-family: 'Raleway';
 
 }
-.carousel .item {
-    width: 100%; /*slider width*/
-    min-height: 100%; /*slider height*/
+
+.navblock{
+  background-color: #0E6BA8;
+  width: 15%;
+  float: left;
+  display: block;
+  margin:2.5%;
+  text-align: center;
+  color: #e6e4e6;
+  vertical-align: center;
+  font-family: 'Raleway';
+}
+
+html, body
+{
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+.logohome {
+    position:absolute;
+    z-index: 10;
+    top: 250px;
+    width:50%;
+    margin-left: 25%;
+}
+
+/*.fixedBox {
+   position: fixed;
+   z-index: -10000;   
+   width: 300px;
+   background: #010067;
+   padding: 10px;*/
+
+ /*------------------------------------------------------------------------------------------------------*/
+
+}
+.carocontainer{
+max-height: 100%
+
+}
+.item {
+    width: 100%;
+    min-height: 100%;
 }
 .carousel .item img {
-    min-width: 100%; /*img width*/
+    min-width: 100%;
 }
-/*full width container*/
+
 @media (min-width: 100%) {
     .block {
         margin-left: 100%;
         margin-right: 100%;
+        overflow: hidden;
     }
 }
 
 html,body{height:100%;}
-.carousel,.item,.active{min-width:100%;overflow: hidden;}
 .carousel-inner{min-width:100%;}
-
